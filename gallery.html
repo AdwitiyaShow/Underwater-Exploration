@@ -10,7 +10,8 @@
             border: 2px solid #2ecc71;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
- body {
+
+        body {
             font-family: 'Verdana', sans-serif;
             margin: 0;
             padding: 0;
@@ -75,38 +76,41 @@
             color: #ddd;
             transform: translateY(-3px);
         }
+
         .marquee {
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-    box-sizing: border-box;
-    color: #ffeb3b;
-    font-size: 20px;
-}
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            box-sizing: border-box;
+            color: #ffeb3b;
+            font-size: 20px;
+        }
 
-.marquee-content {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scroll 50s linear infinite;
-}
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 50s linear infinite;
+        }
 
-@keyframes scroll {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
 
- footer {
-    background-color: #2f4f7f;
-    color: #fff;
-    padding: 2em;
-    width: 100%;
-    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
-    clear: both; /* Added to clear floating elements */
-}
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        footer {
+            background-color: #2f4f7f;
+            color: #fff;
+            padding: 2em;
+            width: 100%;
+            box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+            clear: both;
+            /* Added to clear floating elements */
+        }
 
 
         footer .footer-content {
@@ -152,70 +156,79 @@
             text-align: center;
             clear: both;
         }
-      /* Hero Section */
-/* Hero Section */
-.hero {
-    position: relative;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.579);
-    text-align: center;
-    overflow: hidden; /* Ensures no scrollbars for the video */
-}
 
-/* Fullscreen Video Background */
-#hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire area */
-    z-index: -1; /* Keeps the video in the background */
-}
+        /* Hero Section */
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.579);
+            text-align: center;
+            overflow: hidden;
+            /* Ensures no scrollbars for the video */
+        }
 
-/* Content Overlay */
-.hero-content {
-    z-index: 1; /* Places the content on top of the video */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px; /* Adds spacing below the content */
-}
+        /* Fullscreen Video Background */
+        #hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ensures the video covers the entire area */
+            z-index: -1;
+            /* Keeps the video in the background */
+        }
 
-/* Hero Button Container */
-.hero-button {
-    z-index: 1; /* Ensures button is above the video */
-    margin-top: 20px; /* Spacing between content and button */
-}
+        /* Content Overlay */
+        .hero-content {
+            z-index: 1;
+            /* Places the content on top of the video */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            /* Adds spacing below the content */
+        }
 
-/* Hero Heading */
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
+        /* Hero Button Container */
+        .hero-button {
+            z-index: 1;
+            /* Ensures button is above the video */
+            margin-top: 20px;
+            /* Spacing between content and button */
+        }
 
-/* Hero Button */
-.hero button {
-    background-color: #5d3cc126;
-    border: none;
-    padding: 12px 25px;
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(137, 134, 134, 0.2);
-}
+        /* Hero Heading */
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
 
-.hero button:hover {
-    background-color: #101211;
-}
+        /* Hero Button */
+        .hero button {
+            background-color: #5d3cc126;
+            border: none;
+            padding: 12px 25px;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(137, 134, 134, 0.2);
+        }
+
+        .hero button:hover {
+            background-color: #101211;
+        }
 
 
         /* Gallery Section */
@@ -363,181 +376,181 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Navigation Bar -->
     <nav class="nav-bar">
         <ul class="nav-menu">
             <li class="nav-item"><a href="index.html">Home</a></li>
             <li class="nav-item"><a href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a href="fun-learning.html">Fun Learning</a></li>
-            <li class="nav-item"><a href="caution.html">Caution</a></li>
+            <li class="nav-item"><a href="caution.html">Underwater Hazards</a></li>
             <li class="nav-item"><a href="about.html">About</a></li>
         </ul>
     </nav>
-<!-- Hero Section -->
-<div class="hero">
-    <video autoplay muted loop id="hero-video">
-        <source src="images/underwater.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="hero-content">
-        <h1>Explore the Wonders of the Ocean</h1>
+    <!-- Hero Section -->
+    <div class="hero">
+        <video autoplay muted loop id="hero-video">
+            <source src="images/underwater.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Explore the Wonders of the Ocean</h1>
+        </div>
+        <div class="hero-button">
+            <button onclick="toggleGallery()">View Gallery</button>
+        </div>
     </div>
-    <div class="hero-button">
-        <button onclick="toggleGallery()">View Gallery</button>
-    </div>
-</div>
 
 
-<!-- Gallery Section -->
-<form id="image-upload-form">
-    <input type="file" id="image-upload-input" accept="image/*">
-    <button type="button" id="image-upload-button" onclick="uploadImage()">Upload Image</button>
-</form>
+    <!-- Gallery Section -->
+    <form id="image-upload-form">
+        <input type="file" id="image-upload-input" accept="image/*">
+        <button type="button" id="image-upload-button" onclick="uploadImage()">Upload Image</button>
+    </form>
 
-<!-- Gallery search bar -->
-<form id="gallery-search-form">
-    <input type="search" id="gallery-search-input" placeholder="Search images...">
-    <button type="button" id="gallery-search-button" onclick="searchImages()">Search</button>
-</form>
+    <!-- Gallery search bar -->
+    <form id="gallery-search-form">
+        <input type="search" id="gallery-search-input" placeholder="Search images...">
+        <button type="button" id="gallery-search-button" onclick="searchImages()">Search</button>
+    </form>
 
-<!-- Gallery container -->
-<div id="gallery-container">
-    <div class="gallery-item" id="image1">
-        <img src="images/Octopus.jpg" alt="Octopus">
-        <p>Octopus</p>
+    <!-- Gallery container -->
+    <div id="gallery-container">
+        <div class="gallery-item" id="image1">
+            <img src="images/Octopus.jpg" alt="Octopus">
+            <p>Octopus</p>
+        </div>
+        <div class="gallery-item" id="image2">
+            <img src="images/Dolphin1.jpg" alt="Dolphin">
+            <p>Dolphin</p>
+        </div>
+        <div class="gallery-item" id="image3">
+            <img src="images/shark.jpg" alt="Shark">
+            <p>Shark</p>
+        </div>
+        <div class="gallery-item" id="image4">
+            <img src="images/whale.jpg" alt="Whale">
+            <p>Whale</p>
+        </div>
+        <div class="gallery-item" id="image5">
+            <img src="images/Sea Turtle.jpg" alt="Sea Turtle">
+            <p>Sea Turtle</p>
+        </div>
+        <div class="gallery-item" id="image6">
+            <img src="images/jellyfish.jpg" alt="Jellyfish">
+            <p>Jellyfish</p>
+        </div>
+        <div class="gallery-item" id="image7">
+            <img src="images/Steller-Sea-Lion.jpg" alt="Sea Lion">
+            <p>Sea Lion</p>
+        </div>
+        <div class="gallery-item" id="image8">
+            <img src="images/shark.jpg" alt="Starfish">
+            <p>Starfish</p>
+        </div>
+        <div class="gallery-item" id="image9">
+            <img src="images/Seahorse.jpg" alt="Sea Horse">
+            <p>Sea Horse</p>
+        </div>
+        <div class="gallery-item" id="image10">
+            <img src="images/crab.jpg" alt="Crab">
+            <p>Crab</p>
+        </div>
+        <div class="gallery-item" id="image11">
+            <img src="images/otter.jpg" alt="Otter">
+            <p>Otter</p>
+        </div>
+        <div class="gallery-item" id="image12">
+            <img src="images/Sea Eagle.jpeg" alt="Sea Eagle">
+            <p>Sea Eagle</p>
+        </div>
+        <div class="gallery-item" id="image13">
+            <img src="images/Penguin.jpeg" alt="Penguin">
+            <p>Penguin</p>
+        </div>
+        <div class="gallery-item" id="image14">
+            <img src="images/Dugong.jpg" alt="Dugong">
+            <p>Dugong</p>
+        </div>
+        <div class="gallery-item" id="image15">
+            <img src="images/Seal.jpeg" alt="Seal">
+            <p>Seal</p>
+        </div>
+        <div class="gallery-item" id="image16">
+            <img src="images/Anglerfish.jpg" alt="Anglerfish">
+            <p>Anglerfish</p>
+        </div>
+        <div class="gallery-item" id="image17">
+            <img src="images/butterflyfish.jpeg" alt="Butterfly Fish">
+            <p>Butterfly Fish</p>
+        </div>
+        <div class="gallery-item" id="image18">
+            <img src="images/blue whale.jpeg" alt="Blue Whale">
+            <p>Blue Whale</p>
+        </div>
+        <div class="gallery-item" id="image19">
+            <img src="images/squid.jpg" alt="Squid">
+            <p>Squid</p>
+        </div>
+        <div class="gallery-item" id="image20">
+            <img src="images/giant-manta-ray.jpg" alt="Manta Ray">
+            <p>Manta Ray</p>
+        </div>
     </div>
-    <div class="gallery-item" id="image2">
-        <img src="images/Dolphin1.jpg" alt="Dolphin">
-        <p>Dolphin</p>
-    </div>
-    <div class="gallery-item" id="image3">
-        <img src="images/shark.jpg" alt="Shark">
-        <p>Shark</p>
-    </div>
-    <div class="gallery-item" id="image4">
-        <img src="images/whale.jpg" alt="Whale">
-        <p>Whale</p>
-    </div>
-    <div class="gallery-item" id="image5">
-        <img src="images/Sea Turtle.jpg" alt="Sea Turtle">
-        <p>Sea Turtle</p>
-    </div>
-    <div class="gallery-item" id="image6">
-        <img src="images/jellyfish.jpg" alt="Jellyfish">
-        <p>Jellyfish</p>
-    </div>
-    <div class="gallery-item" id="image7">
-        <img src="images/Steller-Sea-Lion.jpg" alt="Sea Lion">
-        <p>Sea Lion</p>
-    </div>
-    <div class="gallery-item" id="image8">
-        <img src="images/shark.jpg" alt="Starfish">
-        <p>Starfish</p>
-    </div>
-    <div class="gallery-item" id="image9">
-        <img src="images/Seahorse.jpg" alt="Sea Horse">
-        <p>Sea Horse</p>
-    </div>
-    <div class="gallery-item" id="image10">
-        <img src="images/crab.jpg" alt="Crab">
-        <p>Crab</p>
-    </div>
-    <div class="gallery-item" id="image11">
-        <img src="images/otter.jpg" alt="Otter">
-        <p>Otter</p>
-    </div>
-    <div class="gallery-item" id="image12">
-        <img src="images/Sea Eagle.jpeg" alt="Sea Eagle">
-        <p>Sea Eagle</p>
-    </div>
-    <div class="gallery-item" id="image13">
-        <img src="images/Penguin.jpeg" alt="Penguin">
-        <p>Penguin</p>
-    </div>
-    <div class="gallery-item" id="image14">
-        <img src="images/Dugong.jpg" alt="Dugong">
-        <p>Dugong</p>
-    </div>
-    <div class="gallery-item" id="image15">
-        <img src="images/Seal.jpeg" alt="Seal">
-        <p>Seal</p>
-    </div>
-    <div class="gallery-item" id="image16">
-        <img src="images/Anglerfish.jpg" alt="Anglerfish">
-        <p>Anglerfish</p>
-    </div>
-    <div class="gallery-item" id="image17">
-        <img src="images/butterflyfish.jpeg" alt="Butterfly Fish">
-        <p>Butterfly Fish</p>
-    </div>
-    <div class="gallery-item" id="image18">
-        <img src="images/blue whale.jpeg" alt="Blue Whale">
-        <p>Blue Whale</p>
-    </div>
-    <div class="gallery-item" id="image19">
-        <img src="images/squid.jpg" alt="Squid">
-        <p>Squid</p>
-    </div>
-    <div class="gallery-item" id="image20">
-        <img src="images/giant-manta-ray.jpg" alt="Manta Ray">
-        <p>Manta Ray</p>
-    </div>
-</div>
 
-<!-- Modal -->
-<div class="modal" id="modal" style="display: none;">
-    <button class="close-button" onclick="closeModal()">X</button>
-    <img id="modal-image" src="" alt="">
-</div>
+    <!-- Modal -->
+    <div class="modal" id="modal" style="display: none;">
+        <button class="close-button" onclick="closeModal()">X</button>
+        <img id="modal-image" src="" alt="">
+    </div>
 
-   <script>
-    // Function to search images based on user input
-    function searchImages() {
-        const searchQuery = document.getElementById('gallery-search-input').value.toLowerCase();
-        const items = document.querySelectorAll('.gallery-item');
+    <script>
+        // Function to search images based on user input
+        function searchImages() {
+            const searchQuery = document.getElementById('gallery-search-input').value.toLowerCase();
+            const items = document.querySelectorAll('.gallery-item');
 
-        items.forEach(item => {
-            const title = item.querySelector('p').textContent.toLowerCase();
-            if (title.includes(searchQuery)) {
-                item.style.display = 'block'; // Show matching items
-            } else {
-                item.style.display = 'none'; // Hide non-matching items
-            }
-        });
-    }
+            items.forEach(item => {
+                const title = item.querySelector('p').textContent.toLowerCase();
+                if (title.includes(searchQuery)) {
+                    item.style.display = 'block'; // Show matching items
+                } else {
+                    item.style.display = 'none'; // Hide non-matching items
+                }
+            });
+        }
 
-    // Function to open the modal with the clicked image
-    function openModal(imageUrl) {
-        const modal = document.getElementById('modal');
-        const modalImage = document.getElementById('modal-image');
-        modal.style.display = 'flex';
-        modalImage.src = imageUrl;
-    }
+        // Function to open the modal with the clicked image
+        function openModal(imageUrl) {
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            modal.style.display = 'flex';
+            modalImage.src = imageUrl;
+        }
 
-    // Function to close the modal
-    function closeModal() {
-        const modal = document.getElementById('modal');
-        modal.style.display = 'none';
-    }
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
 
-    // Function to toggle the visibility of the gallery
-    function toggleGallery() {
-        const gallery = document.getElementById('gallery-container');
-        gallery.style.display = gallery.style.display === 'none' ? 'grid' : 'none';
-    }
+        // Function to toggle the visibility of the gallery
+        function toggleGallery() {
+            const gallery = document.getElementById('gallery-container');
+            gallery.style.display = gallery.style.display === 'none' ? 'grid' : 'none';
+        }
 
-    // Add click event listeners to images to open them in the modal
-    document.addEventListener('DOMContentLoaded', () => {
-        const galleryItems = document.querySelectorAll('.gallery-item img');
+        // Add click event listeners to images to open them in the modal
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryItems = document.querySelectorAll('.gallery-item img');
 
-        galleryItems.forEach(img => {
-            img.addEventListener('click', () => {
-                openModal(img.src);
+            galleryItems.forEach(img => {
+                img.addEventListener('click', () => {
+                    openModal(img.src);
+                });
             });
         });
-    });
-     // Function to handle image upload
+        // Function to handle image upload
         function uploadImage() {
             const fileInput = document.getElementById('image-upload-input');
             const galleryContainer = document.getElementById('gallery-container');
@@ -617,7 +630,7 @@
                 });
             });
         });
-</script>
+    </script>
 
 
     <!-- Footer Section -->
@@ -626,7 +639,8 @@
         <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap;">
             <div style="flex-basis: 30%; margin-right: 20px; padding: 10px;">
                 <h3>About Us</h3>
-                <p>This is an Underwater exploration website. This will help you to know more about the unknown inside water
+                <p>This is an Underwater exploration website. This will help you to know more about the unknown inside
+                    water
                     and reminds you to not only "fly" but also "dive".</p>
                 <ul style="list-style: none; margin: 0; padding: 0;">
                     <li style="display: inline-block; margin-right: 10px;">
@@ -652,7 +666,7 @@
                     <li><a href="index.html" style="color: #fff; text-decoration: none;">Home</a></li>
                     <li><a href="gallery.html" style="color: #fff; text-decoration: none;">Gallery</a></li>
                     <li><a href="fun-learning.html" style="color: #fff; text-decoration: none;">Fun Learning</a></li>
-                    <li><a href="caution.html" style="color: #fff; text-decoration: none;">Caution</a></li>
+                    <li><a href="caution.html" style="color: #fff; text-decoration: none;">Underwater Hazards</a></li>
                     <li><a href="about.html" style="color: #fff; text-decoration: none;">About</a></li>
                 </ul>
             </div>
