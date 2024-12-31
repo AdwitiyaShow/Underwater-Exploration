@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        .highlight {
+            border: 2px solid #2ecc71;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+ body {
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: #2f4f7f;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header b {
+            font-weight: bold;
+        }
+
+        marquee {
+            color: #ffeb3b;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .nav-bar {
+            background-color: #2f4f7f;
+            padding: 1em;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .nav-bar:hover {
+            background-color: #1e3d59;
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .nav-item a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-item a:hover {
+            color: #ddd;
+            transform: translateY(-3px);
+        }
+        .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    color: #ffeb3b;
+    font-size: 20px;
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 50s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+ footer {
+    background-color: #2f4f7f;
+    color: #fff;
+    padding: 2em;
+    width: 100%;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+    clear: both; /* Added to clear floating elements */
+}
+
+
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        footer .footer-content>div {
+            flex-basis: 30%;
+            margin-right: 20px;
+        }
+
+        footer .footer-content h3 {
+            margin-bottom: 10px;
+        }
+
+        footer .footer-content a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer .footer-content a:hover {
+            color: #ffeb3b;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            margin: 0 15px;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #3498db;
+        }
+
+        footer .copyright {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            clear: both;
+        }
+      /* Hero Section */
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.579);
+    text-align: center;
+    overflow: hidden; /* Ensures no scrollbars for the video */
+}
+
+/* Fullscreen Video Background */
+#hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire area */
+    z-index: -1; /* Keeps the video in the background */
+}
+
+/* Content Overlay */
+.hero-content {
+    z-index: 1; /* Places the content on top of the video */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Adds spacing below the content */
+}
+
+/* Hero Button Container */
+.hero-button {
+    z-index: 1; /* Ensures button is above the video */
+    margin-top: 20px; /* Spacing between content and button */
+}
+
+/* Hero Heading */
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Hero Button */
+.hero button {
+    background-color: #5d3cc126;
+    border: none;
+    padding: 12px 25px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(137, 134, 134, 0.2);
+}
+
+.hero button:hover {
+    background-color: #101211;
+}
+
+
+        /* Gallery Section */
+        #image-upload-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #image-upload-input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        #image-upload-button {
+            background-color: #4b12e5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        #image-upload-button:hover {
+            background-color: #1b1d1b;
+        }
+
+        #gallery-search-form {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #gallery-search-input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        #gallery-search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1c48cd;
+            border: none;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+        }
+
+        #gallery-search-button:hover {
+            background-color: #101111;
+        }
+
+        #gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .gallery-item p {
+            padding: 10px;
+            background-color: #f7f7f7;
+            border-radius: 0 0 10px 10px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .highlight {
+            background-color: #ffeb3b;
+        }
+
+        /* Modal for Enlarged Images */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #333;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .close-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <b>ANNOUNCEMENTS :</b>
+            <div class="marquee">
+                <div class="marquee-content">
+                    Intelligence plus curiosity—that is the root of true discovery. &nbsp;&nbsp;|&nbsp;&nbsp;
+                    Explore the depths of the ocean and uncover its mysteries. &nbsp;&nbsp;|&nbsp;&nbsp;
+                    Don't miss our upcoming underwater exploration webinar! &nbsp;&nbsp;|&nbsp;&nbsp;
+                    Discover marine life like never before—start your adventure today!
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a href="fun-learning.html">Fun Learning</a></li>
+            <li class="nav-item"><a href="caution.html">Caution</a></li>
+            <li class="nav-item"><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+<!-- Hero Section -->
+<div class="hero">
+    <video autoplay muted loop id="hero-video">
+        <source src="images/underwater.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+        <h1>Explore the Wonders of the Ocean</h1>
+    </div>
+    <div class="hero-button">
+        <button onclick="toggleGallery()">View Gallery</button>
+    </div>
+</div>
+
+
+<!-- Gallery Section -->
+<form id="image-upload-form">
+    <input type="file" id="image-upload-input" accept="image/*">
+    <button type="button" id="image-upload-button" onclick="uploadImage()">Upload Image</button>
+</form>
+
+<!-- Gallery search bar -->
+<form id="gallery-search-form">
+    <input type="search" id="gallery-search-input" placeholder="Search images...">
+    <button type="button" id="gallery-search-button" onclick="searchImages()">Search</button>
+</form>
+
+<!-- Gallery container -->
+<div id="gallery-container">
+    <div class="gallery-item" id="image1">
+        <img src="images/Octopus.jpg" alt="Octopus">
+        <p>Octopus</p>
+    </div>
+    <div class="gallery-item" id="image2">
+        <img src="images/Dolphin1.jpg" alt="Dolphin">
+        <p>Dolphin</p>
+    </div>
+    <div class="gallery-item" id="image3">
+        <img src="images/shark.jpg" alt="Shark">
+        <p>Shark</p>
+    </div>
+    <div class="gallery-item" id="image4">
+        <img src="images/whale.jpg" alt="Whale">
+        <p>Whale</p>
+    </div>
+    <div class="gallery-item" id="image5">
+        <img src="images/Sea Turtle.jpg" alt="Sea Turtle">
+        <p>Sea Turtle</p>
+    </div>
+    <div class="gallery-item" id="image6">
+        <img src="images/jellyfish.jpg" alt="Jellyfish">
+        <p>Jellyfish</p>
+    </div>
+    <div class="gallery-item" id="image7">
+        <img src="images/Steller-Sea-Lion.jpg" alt="Sea Lion">
+        <p>Sea Lion</p>
+    </div>
+    <div class="gallery-item" id="image8">
+        <img src="images/shark.jpg" alt="Starfish">
+        <p>Starfish</p>
+    </div>
+    <div class="gallery-item" id="image9">
+        <img src="images/Seahorse.jpg" alt="Sea Horse">
+        <p>Sea Horse</p>
+    </div>
+    <div class="gallery-item" id="image10">
+        <img src="images/crab.jpg" alt="Crab">
+        <p>Crab</p>
+    </div>
+    <div class="gallery-item" id="image11">
+        <img src="images/otter.jpg" alt="Otter">
+        <p>Otter</p>
+    </div>
+    <div class="gallery-item" id="image12">
+        <img src="images/Sea Eagle.jpeg" alt="Sea Eagle">
+        <p>Sea Eagle</p>
+    </div>
+    <div class="gallery-item" id="image13">
+        <img src="images/Penguin.jpeg" alt="Penguin">
+        <p>Penguin</p>
+    </div>
+    <div class="gallery-item" id="image14">
+        <img src="images/Dugong.jpg" alt="Dugong">
+        <p>Dugong</p>
+    </div>
+    <div class="gallery-item" id="image15">
+        <img src="images/Seal.jpeg" alt="Seal">
+        <p>Seal</p>
+    </div>
+    <div class="gallery-item" id="image16">
+        <img src="images/Anglerfish.jpg" alt="Anglerfish">
+        <p>Anglerfish</p>
+    </div>
+    <div class="gallery-item" id="image17">
+        <img src="images/butterflyfish.jpeg" alt="Butterfly Fish">
+        <p>Butterfly Fish</p>
+    </div>
+    <div class="gallery-item" id="image18">
+        <img src="images/blue whale.jpeg" alt="Blue Whale">
+        <p>Blue Whale</p>
+    </div>
+    <div class="gallery-item" id="image19">
+        <img src="images/squid.jpg" alt="Squid">
+        <p>Squid</p>
+    </div>
+    <div class="gallery-item" id="image20">
+        <img src="images/giant-manta-ray.jpg" alt="Manta Ray">
+        <p>Manta Ray</p>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal" style="display: none;">
+    <button class="close-button" onclick="closeModal()">X</button>
+    <img id="modal-image" src="" alt="">
+</div>
+
+   <script>
+    // Function to search images based on user input
+    function searchImages() {
+        const searchQuery = document.getElementById('gallery-search-input').value.toLowerCase();
+        const items = document.querySelectorAll('.gallery-item');
+
+        items.forEach(item => {
+            const title = item.querySelector('p').textContent.toLowerCase();
+            if (title.includes(searchQuery)) {
+                item.style.display = 'block'; // Show matching items
+            } else {
+                item.style.display = 'none'; // Hide non-matching items
+            }
+        });
+    }
+
+    // Function to open the modal with the clicked image
+    function openModal(imageUrl) {
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        modal.style.display = 'flex';
+        modalImage.src = imageUrl;
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = 'none';
+    }
+
+    // Function to toggle the visibility of the gallery
+    function toggleGallery() {
+        const gallery = document.getElementById('gallery-container');
+        gallery.style.display = gallery.style.display === 'none' ? 'grid' : 'none';
+    }
+
+    // Add click event listeners to images to open them in the modal
+    document.addEventListener('DOMContentLoaded', () => {
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+
+        galleryItems.forEach(img => {
+            img.addEventListener('click', () => {
+                openModal(img.src);
+            });
+        });
+    });
+     // Function to handle image upload
+        function uploadImage() {
+            const fileInput = document.getElementById('image-upload-input');
+            const galleryContainer = document.getElementById('gallery-container');
+
+            // Ensure a file is selected
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert('Please select an image to upload.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+
+            // Check if the file is an image
+            if (!file.type.startsWith('image/')) {
+                alert('Only image files are allowed.');
+                return;
+            }
+
+            // Create a FileReader to read the selected file
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+                // Create a new gallery item
+                const galleryItem = document.createElement('div');
+                galleryItem.classList.add('gallery-item');
+
+                // Create an image element
+                const img = document.createElement('img');
+                img.src = event.target.result; // Set the image source to the file data
+                img.alt = file.name;
+
+                // Add a paragraph for the image name
+                const imageName = document.createElement('p');
+                imageName.textContent = file.name;
+
+                // Add click event for modal functionality
+                img.addEventListener('click', () => {
+                    openModal(img.src);
+                });
+
+                // Append the image and name to the gallery item
+                galleryItem.appendChild(img);
+                galleryItem.appendChild(imageName);
+
+                // Append the gallery item to the gallery container
+                galleryContainer.appendChild(galleryItem);
+
+                // Clear the file input after upload
+                fileInput.value = '';
+            };
+
+            // Read the file as a Data URL
+            reader.readAsDataURL(file);
+        }
+
+        // Function to open a modal with the clicked image
+        function openModal(imageUrl) {
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            modal.style.display = 'flex';
+            modalImage.src = imageUrl;
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        // Add event listeners on DOM load for any existing images
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryItems = document.querySelectorAll('.gallery-item img');
+
+            galleryItems.forEach(img => {
+                img.addEventListener('click', () => {
+                    openModal(img.src);
+                });
+            });
+        });
+</script>
+
+
+    <!-- Footer Section -->
+    <footer
+        style="background-color: #2f4f7f; color: #fff; padding: 2em 0; width: 100%; box-shadow: 0px -2px 4px rgba(0,0,0,0.1); clear: both;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <div style="flex-basis: 30%; margin-right: 20px; padding: 10px;">
+                <h3>About Us</h3>
+                <p>This is an Underwater exploration website. This will help you to know more about the unknown inside water
+                    and reminds you to not only "fly" but also "dive".</p>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li style="display: inline-block; margin-right: 10px;">
+                        <a href="#" target="_blank" style="color: #fff; text-decoration: none;">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li style="display: inline-block; margin-right: 10px;">
+                        <a href="#" target="_blank" style="color: #fff; text-decoration: none;">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li style="display: inline-block; margin-right: 10px;">
+                        <a href="#" target="_blank" style="color: #fff; text-decoration: none;">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div style="flex-basis: 30%; margin-right: 20px; padding: 10px;">
+                <h3>Quick Links</h3>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><a href="index.html" style="color: #fff; text-decoration: none;">Home</a></li>
+                    <li><a href="gallery.html" style="color: #fff; text-decoration: none;">Gallery</a></li>
+                    <li><a href="fun-learning.html" style="color: #fff; text-decoration: none;">Fun Learning</a></li>
+                    <li><a href="caution.html" style="color: #fff; text-decoration: none;">Caution</a></li>
+                    <li><a href="about.html" style="color: #fff; text-decoration: none;">About</a></li>
+                </ul>
+            </div>
+            <div style="flex-basis: 30%; padding: 10px;">
+                <h3>Contact Us</h3>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:sourav.show@gmail.com"
+                        style="color: #fff; text-decoration: none;">sourav.show@gmail.com</a></p>
+                <p><i class="fa fa-phone" aria-hidden="true"></i> +91 88478 93952</p>
+            </div>
+        </div>
+        <div style="background-color: #333; color: #fff; padding: 1em; text-align: center; clear: both;">
+            <p>&copy; 2024 Underwater Exploration. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
